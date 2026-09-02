@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ENVIRONMENT=development
+      - USE_MOCK_STORAGE=true
+      - GCP_PROJECT_ID=careeros-production
+      - GCP_REGION=us-central1
+      - INTERNAL_SCHEDULER_SECRET=careeros-scheduler-secret-key-prod
+    restart: unless-stopped

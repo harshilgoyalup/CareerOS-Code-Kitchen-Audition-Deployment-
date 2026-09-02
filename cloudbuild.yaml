@@ -1,0 +1,38 @@
+steps:
+  # 1. Build Docker image with Google Artifact Registry tag
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/careeros:${COMMIT_SHA}',
+      '-t',
+      '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/careeros:latest',
+      '.'
+    ]
+
+  # 2. Push image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'push',
+      '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/careeros:${COMMIT_SHA}'
+    ]
+
+  # 3. Deploy image to Google Cloud Run
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args: [
+      'run', 'deploy', 'careeros-app',
+      '--image', '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/careeros:${COMMIT_SHA}',
+      '--region', '${_REGION}',
+      '--platform', 'managed',
+      '--allow-unauthenticated',
+      '--set-env-vars', 'GCP_PROJECT_ID=${PROJECT_ID},GCP_REGION=${_REGION},ENVIRONMENT=production,USE_MOCK_STORAGE=false'
+    ]
+
+substitutions:
+  _REGION: 'us-central1'
+  _REPO_NAME: 'careeros-repo'
+
+images:
+  - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/careeros:${COMMIT_SHA}'
+  - '${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/careeros:latest'

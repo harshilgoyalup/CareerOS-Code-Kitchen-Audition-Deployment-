@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CareerOS - Applications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-highest": "#353535",
+                "surface-bright": "#393939",
+                "surface-tint": "#c6c6c7",
+                "outline-variant": "#444748",
+                "surface-container-high": "#2a2a2a",
+                "on-secondary-container": "#b7b5b4",
+                "on-error": "#690005",
+                "secondary": "#c8c6c5",
+                "tertiary": "#ffffff",
+                "on-tertiary-fixed-variant": "#464747",
+                "on-primary": "#2f3131",
+                "surface": "#131313",
+                "primary": "#ffffff",
+                "background": "#131313",
+                "on-surface": "#e2e2e2",
+                "surface-container-low": "#1b1b1b",
+                "surface-dim": "#131313",
+                "error-container": "#93000a",
+                "inverse-surface": "#e2e2e2",
+                "primary-container": "#e2e2e2",
+                "inverse-on-surface": "#303030",
+                "on-secondary-fixed-variant": "#474746",
+                "glass-white": "rgba(255, 255, 255, 0.05)",
+                "secondary-container": "#474746",
+                "primary-fixed-dim": "#c6c6c7",
+                "tertiary-fixed-dim": "#c7c6c6",
+                "border-subtle": "#262626",
+                "on-secondary-fixed": "#1c1b1b",
+                "inverse-primary": "#5d5f5f",
+                "secondary-fixed": "#e5e2e1",
+                "error": "#ffb4ab",
+                "tertiary-container": "#e3e2e2",
+                "primary-fixed": "#e2e2e2",
+                "secondary-fixed-dim": "#c8c6c5",
+                "surface-container-lowest": "#0e0e0e",
+                "on-primary-container": "#636565",
+                "on-primary-fixed": "#1a1c1c",
+                "on-primary-fixed-variant": "#454747",
+                "surface-high": "#111111",
+                "on-surface-variant": "#c4c7c8",
+                "tertiary-fixed": "#e3e2e2",
+                "on-error-container": "#ffdad6",
+                "on-tertiary-fixed": "#1b1c1c",
+                "on-background": "#e2e2e2",
+                "outline": "#8e9192",
+                "on-secondary": "#313030",
+                "on-tertiary": "#303031",
+                "surface-container": "#1f1f1f",
+                "surface-variant": "#353535",
+                "on-tertiary-container": "#646464"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "base": "8px",
+                "gutter": "24px",
+                "sm": "12px",
+                "margin-mobile": "16px",
+                "md": "24px",
+                "lg": "48px",
+                "xl": "80px",
+                "xs": "4px",
+                "margin-desktop": "64px"
+        },
+        "fontFamily": {
+                "headline-lg-mobile": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "label-sm": [
+                        "JetBrains Mono"
+                ],
+                "display-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "letterSpacing": "0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "letterSpacing": "0",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .glass-panel {
+            background: rgba(19, 19, 19, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+        .table-row-hover:hover {
+            background-color: theme('colors.surface-container-low');
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased min-h-screen flex selection:bg-surface-container-high selection:text-primary">
+<!-- SideNavBar -->
+<aside class="bg-surface dark:bg-surface h-screen w-64 fixed left-0 top-0 border-r border-border-subtle shadow-sm flex flex-col h-full py-md z-50">
+<div class="px-md mb-xl flex items-center gap-sm">
+<div class="w-8 h-8 rounded-DEFAULT bg-surface-container-high flex items-center justify-center overflow-hidden">
+<img alt="CareerOS Monochrome Logo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFkhE_GYwRkAhL5d1YO8gSzDE133US9P8uh1paPq9PWu6erZOglkZSVwxwCWVV5FPkKqRgtCDHPhR-_joGNSOqfOn-C9GuDm6ffI03bv_lCidD7Ws6EdE3sxhtrAnNqLTSNjChkp2Cnl0L6bYIfL0fsCORR2-e4GRFmAfkrwcuc5LhJVn9YSq09jRpdlsTqCcAY4MGd_LuRfmo0KDWMxYZluI3taYtGbS43yHLIci14wEsxYEeBl1_"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface">CareerOS</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant">AI Career Intelligence</p>
+</div>
+</div>
+<nav class="flex-1 px-sm space-y-xs">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[1.05] transition-transform">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-primary font-bold border-l-2 border-primary bg-surface-container-high group scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined group-hover:scale-[1.05] transition-transform" style="font-variation-settings: 'FILL' 1;">work_history</span>
+                Applications
+            </a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[1.05] transition-transform">search</span>
+                Jobs
+            </a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[1.05] transition-transform">psychology</span>
+                AI Studio
+            </a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[1.05] transition-transform">outgoing_mail</span>
+                Follow-ups
+            </a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[1.05] transition-transform">monitoring</span>
+                Analytics
+            </a>
+</nav>
+<div class="mt-auto px-sm space-y-xs pt-md border-t border-border-subtle">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[1.05] transition-transform">upload_file</span>
+                Import Data
+            </a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-[1.05] transition-transform">settings</span>
+                Settings
+            </a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="ml-64 flex-1 flex flex-col min-h-screen relative">
+<!-- TopNavBar -->
+<header class="bg-surface/80 backdrop-blur-xl dark:bg-surface/80 fixed top-0 right-0 left-64 h-16 z-40 border-b border-border-subtle flex justify-between items-center px-gutter w-[calc(100%-256px)]">
+<div class="flex items-center gap-sm w-96">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container-low border-border-subtle rounded-full pl-10 pr-4 py-2 text-sm focus:ring-1 focus:ring-primary focus:border-primary transition-all text-on-surface placeholder:text-on-surface-variant/50" placeholder="Search applications, companies, roles..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-all relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 rounded-full bg-primary border border-surface"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-6 w-px bg-border-subtle mx-xs"></div>
+<button class="flex items-center gap-sm hover:opacity-80 transition-opacity">
+<img alt="User profile avatar" class="w-8 h-8 rounded-full object-cover border border-border-subtle" data-alt="A small, circular avatar portrait of a modern professional in a minimalist setting. Soft, natural lighting. High quality corporate headshot style, deeply integrated into a sleek dark UI theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVA5hrKm-AuTFHP35nEh5FH7rDouwzXWyKx5inLiZ3bhmzjwDzF8OiqpKAdzqUa6RQ00MpeyTHtnERmGQ-RrLsT0S9P_4Cpt2On0RQMpfkvSf3dzP37bz4zmc1T4HKR-zc43N9OcXu9Er5RPwZNKeHT4GTTDnuhtUh_MpkB-PSWVTh8p5cek5oKR3NGx2gcGPutJmSOKN6UleIXOq9lEvRm78c_vs08-Fj0SfcqQQta65Uym4L0lk8"/>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 pt-24 px-lg pb-xl mx-auto w-full">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Active Applications</h2>
+<p class="text-on-surface-variant">Track and manage your professional pipeline.</p>
+</div>
+<div class="flex gap-sm">
+<button class="flex items-center gap-xs px-4 py-2 rounded-lg bg-surface-container-high border border-border-subtle text-on-surface hover:bg-surface-container-highest transition-colors font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+<button class="flex items-center gap-xs px-4 py-2 rounded-lg bg-primary text-on-primary font-medium btn-glow transition-all font-label-sm text-label-sm hover:bg-primary/90">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        New Application
+                    </button>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="glass-panel rounded-xl overflow-hidden shadow-lg relative border border-border-subtle">
+<!-- Table Controls / Filters -->
+<div class="p-4 border-b border-border-subtle flex justify-between items-center bg-surface-container-lowest/50">
+<div class="flex gap-sm">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high text-primary border border-border-subtle font-label-sm text-label-sm flex items-center gap-xs transition-colors">
+                            All <span class="bg-surface-container-highest px-1.5 rounded text-[10px]">24</span>
+</button>
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm transition-colors">
+                            Applied
+                        </button>
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm transition-colors">
+                            Interviewing
+                        </button>
+<button class="px-3 py-1.5 rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-sm text-label-sm transition-colors">
+                            Offers
+                        </button>
+</div>
+<div class="flex items-center gap-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">sort</span>
+                        Sort by: <span class="text-on-surface cursor-pointer hover:text-primary">Last Updated</span>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-border-subtle text-on-surface-variant font-label-sm text-label-sm">
+<th class="py-3 px-4 font-medium">Company &amp; Role</th>
+<th class="py-3 px-4 font-medium">Type</th>
+<th class="py-3 px-4 font-medium">Applied Date</th>
+<th class="py-3 px-4 font-medium">Status</th>
+<th class="py-3 px-4 font-medium">Next Follow-up</th>
+<th class="py-3 px-4 font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="text-sm divide-y divide-border-subtle">
+<!-- Row 1 -->
+<tr class="table-row-hover transition-colors group cursor-pointer">
+<td class="py-4 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-DEFAULT bg-surface-container-high flex items-center justify-center border border-border-subtle overflow-hidden shrink-0">
+<img class="w-full h-full object-cover grayscale" data-alt="A sleek, minimalist corporate logo placeholder for a tech company. Simple geometric shape in neon blue on a dark slate background. High resolution, clean design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC--tjfn5w2VaXQ83Bb0fyniFotiWLrRzVSCtKFX84vkixOgTzt9K6WwUA-r-6S1uG3NsnNClBaNYX5AB-rpx_njI1v0hMrEkyCSPKh57PTn3PcK_6M-Wj2AaGSTLvSwA9rbdw-vE-KgNfzpPBnS9OjBkov3XYJVvkZ9vJS4Xd52dZ05Fx-T2vkW2rSW06bKTaJ5ehn0CQMlgoGOBjz1ft2XzDoFMPQhptHkfOyu2pjgbkSO_Qn7F4g"/>
+</div>
+<div>
+<p class="font-medium text-on-surface group-hover:text-primary transition-colors">Stripe</p>
+<p class="text-on-surface-variant text-xs">Senior Frontend Engineer</p>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 text-on-surface-variant">Full-time</td>
+<td class="py-4 px-4 text-on-surface-variant">Oct 12, 2023</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-primary border border-border-subtle font-label-sm text-[11px]">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                        Interviewing
+                                    </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2 text-primary font-medium text-sm">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                        Oct 25
+                                    </div>
+</td>
+<td class="py-4 px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</body></html>
